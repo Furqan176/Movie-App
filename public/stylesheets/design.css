@@ -73,7 +73,7 @@ body {
 }
 .bt .btn {
   margin-bottom: -267px;
-  margin-left: 90px;
+  /* margin-left: 90px; */
 }
 h3 {
   color: white;
