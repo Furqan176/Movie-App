@@ -1,0 +1,20 @@
+.container {
+  padding: 50px;
+  margin-left: 280px;
+}
+
+.card {
+  border-radius: 25px;
+  background-color: #e6eaeb;
+}
+body {
+  background-color: rgb(213, 205, 205);
+}
+h1 {
+  margin-left: 262px;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 10px;
+}

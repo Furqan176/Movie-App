@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Movies</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="/stylesheets/searchdesign.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn btn-success" onclick="history.back()">Go back</button>
+      <h1 id="searchTitle" style="text-align: center mt-5">
+        Search Results <span></span>
+      </h1>
+
+      <div class="card w-75 mb-5">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src=<%=movie['Poster'] %> alt=" hiiiiiiiii" class="img-fluid
+            card-img" />
+          </div>
+
+          <div class="col-md-8">
+            <div class="card-body">
+              <h2 class="card-title"><%= movie['Title'] %></h2>
+
+              <hr />
+              <p class="card-text"><%= movie['Plot']%></p>
+
+              <hr />
+
+              <p class="card-text">
+                Date Published: <b><%= movie['Released']%></b>
+              </p>
+              <p class="card-text">
+                Ratings:
+                <b><%= movie['Ratings'][0]['Value']%></b>
+              </p>
+              <p class="card-text">Award: <b><%= movie['Awards']%></b></p>
+
+              <p class="card-text">Director: <b><%= movie['Director']%></b></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

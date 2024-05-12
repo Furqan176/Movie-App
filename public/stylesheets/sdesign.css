@@ -1,0 +1,36 @@
+#searchh1 {
+  margin-top: 20%;
+  margin-right: 45px;
+  letter-spacing: 8px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.card-title {
+  font-family: Lato;
+}
+
+.btn {
+  margin-left: 20px;
+}
+.fm {
+  border: 2px solid #ccc;
+}
+.card {
+  margin-left: 12.5%;
+}
+
+.card-img {
+  height: 24rem;
+}
+
+#searchHeading {
+  margin-left: 12.5%;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-family: Montserrat;
+  font-weight: 700;
+}

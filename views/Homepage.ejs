@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HomePage</title>
+    <link rel="stylesheet" href="/stylesheets/design.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="bt">
+      <button class="btn btn-success" onclick="history.back()">Go back</button>
+    </div>
+    <div class="card-container">
+      <h1 class="mv">Movie Details</h1>
+      <div class="row">
+        <% movie.forEach((movie) => { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="<%= movie['Poster'] %>" alt="image" />
+            <div class="card-content">
+              <div class="one">
+                <h3 style="text-align: center"><%= movie['Title']%></h3>
+                <h6 style="text-align: center"><%= movie['Year']%></h6>
+              </div>
+              <a href="/movies/<%= movie['imdbID'] %>" class="btn">
+                View details</a
+              >
+            </div>
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>
