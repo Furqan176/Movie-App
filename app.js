@@ -3,7 +3,6 @@ import("node-fetch").then(({ default: fetch }) => {
   const app = express();
   const path = require("path");
   const port = process.env.PORT || 3000;
-  // const fetch = require("node-fetch");
 
   const bodyParser = require("body-parser");
   app.use(bodyParser.urlencoded({ extended: true }));
@@ -17,24 +16,23 @@ import("node-fetch").then(({ default: fetch }) => {
   });
 
   app.get("/movies/:id", (req, res) => {
-    let mv = req.body.movie;
-
     const ids = req.params.id;
     let gt = `http://www.omdbapi.com/?i=${ids}&apikey=524df923`;
 
     fetch(`${gt}`)
       .then((data) => data.json())
       .then((moviedata) => {
-        console.log(mv);
         console.log("inside get", moviedata);
         res.render("movies", { movie: moviedata });
+      })
+      .catch((error) => {
+        console.error("Error fetching movie:", error);
+        res.status(500).send("Error fetching movie");
       });
   });
 
   app.post("/results", (req, res) => {
-    console.log(req.body.movie);
     let mv = req.body.movie;
-    console.log("mvs", mv);
     let gt = `http://www.omdbapi.com/?s=${mv}&apikey=524df923`;
 
     fetch(`${gt}`)
@@ -42,13 +40,18 @@ import("node-fetch").then(({ default: fetch }) => {
       .then((moviedata) => {
         console.log("inside moviedata", moviedata);
         res.render("Homepage", { movie: moviedata.Search });
+      })
+      .catch((error) => {
+        console.error("Error fetching search results:", error);
+        res.status(500).send("Error fetching search results");
       });
   });
+
   app.get("/search", (req, res) => {
     res.render("search");
   });
 
-  app.listen(port, (req, res) => {
-    console.log("server is running on port 3000");
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
   });
 });
