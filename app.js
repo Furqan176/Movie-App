@@ -12,9 +12,6 @@ app.use(express.static("public"));
 app.get("/homepage", (req, res) => {
   res.render("Homepage");
 });
-app.get("/", (req, res) => {
-  res.redirect("/search");
-});
 
 app.get("/movies/:id", (req, res) => {
   // let mv = req.body.movie;
