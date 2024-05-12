@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
+const port = 3000;
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -45,6 +46,6 @@ app.get("/search", (req, res) => {
   res.render("search");
 });
 
-app.listen(3000, (req, res) => {
+app.listen(port, (req, res) => {
   console.log("server is running on port 3000");
 });
