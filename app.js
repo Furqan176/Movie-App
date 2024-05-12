@@ -45,9 +45,6 @@ app.post("/results", (req, res) => {
       res.render("Homepage", { movie: moviedata.Search });
     });
 });
-app.get("/search", (req, res) => {
-  res.render("search");
-});
 
 app.listen(3000, (req, res) => {
   console.log("server is running on port 3000");
