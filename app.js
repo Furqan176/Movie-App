@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const path = require("path");
-
+require("dotenv").config();
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -19,9 +19,9 @@ app.get("/", (req, res) => {
 app.get("/movies/:id", (req, res) => {
   // let mv = req.body.movie;
   let mv = req.body.movie;
-
+  const api_key = process.env.API_KEY;
   const ids = req.params.id;
-  let gt = `http://www.omdbapi.com/?i=${ids}&apikey=524df923`;
+  let gt = `http://www.omdbapi.com/?i=${ids}&apikey=${api_key}`;
 
   fetch(`${gt}`)
     .then((data) => data.json())
@@ -35,8 +35,10 @@ app.get("/movies/:id", (req, res) => {
 app.post("/results", (req, res) => {
   console.log(req.body.movie);
   let mv = req.body.movie;
+  const api_key = process.env.API_KEY;
+
   console.log("mvs", mv);
-  let gt = `http://www.omdbapi.com/?s=${mv}&apikey=524df923`;
+  let gt = `http://www.omdbapi.com/?s=${mv}&apikey=${api_key}`;
 
   fetch(`${gt}`)
     .then((data) => data.json())
