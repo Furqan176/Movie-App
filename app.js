@@ -47,5 +47,5 @@ app.get("/search", (req, res) => {
 });
 
 app.listen(port, (req, res) => {
-  console.log("server is running on port 3000");
+  console.log("server is running on port 4000");
 });
