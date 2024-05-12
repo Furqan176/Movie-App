@@ -18,6 +18,7 @@ app.get("/", (req, res) => {
 
 app.get("/movies/:id", (req, res) => {
   // let mv = req.body.movie;
+  let mv = req.body.movie;
 
   const ids = req.params.id;
   let gt = `http://www.omdbapi.com/?i=${ids}&apikey=524df923`;
